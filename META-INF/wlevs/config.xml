@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n1:config xmlns:n1="http://www.bea.com/ns/wlevs/config/application">
+  <processor>
+    <name>helloworldProcessor</name>
+    <rules>
+
+      <query id="averageRule">
+        <![CDATA[ select code, deal_price, deal_volume, (total_money+(deal_price*deal_volume))/(total_volume+deal_volume) as aver_price, 
+        (total_money+(deal_price*deal_volume)) as total_money, (total_volume+deal_volume) as total_volume, bs_flag, trade_time, time_stamp from helloworldInputChannel ]]>
+      </query>
+      
+
+    </rules>
+  </processor>
+</n1:config>
